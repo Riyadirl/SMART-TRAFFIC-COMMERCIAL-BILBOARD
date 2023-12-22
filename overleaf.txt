@@ -1,0 +1,566 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\lstset {
+    language=C++,
+    backgroundcolor=\color{black!5}, % set backgroundcolor
+    basicstyle=\footnotesize,% basic font setting
+}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\begin{document}
+
+
+\title{SMART TRAFFIC COMMERCIAL BILBOARD}
+
+\author{\IEEEauthorblockN{Arpon Kar Angtip\IEEEauthorrefmark{1}, Arshad Md. Adel\IEEEauthorrefmark{2}, 5. Mahabub Hasan Riyad\IEEEauthorrefmark{3}, Md. Jamilur Rahman\IEEEauthorrefmark{4} and A.H.M. Fahim Tanjim\IEEEauthorrefmark{5}}
+\IEEEauthorblockA{\textit{Dept. of Computer Science and Engineering} \\
+\textit{United International University, Dhaka, Bangladesh}\\
+011221180\IEEEauthorrefmark{1}, 011221299\IEEEauthorrefmark{2},
+ 011211007\IEEEauthorrefmark{3}, 011211097\IEEEauthorrefmark{4} and 011211021\IEEEauthorrefmark{5}
+}}
+
+\maketitle
+
+\begin{abstract}
+Efficient traffic management is an integral aspect of societal development, impacting daily productivity and the overall growth of a region. Inadequate transportation systems can lead to substantial time wastage during rush hours, impeding a country's progress. This project aims to address the challenges faced by traffic authorities during peak traffic times by introducing an innovative solution.
+
+Our project focuses on implementing a smart LED billboard system designed to optimize traffic flow through manual and automated controls. The LED billboard will offer real-time traffic guidance, displaying messages to regulate vehicle movement, provide lane-specific information to drivers, and communicate essential traffic management updates. Additionally, the system will alert drivers when pedestrian crossings are occupied and feature an emergency traffic management module capable of displaying urgent messages during critical situations.
+
+To enhance efficiency, sensors strategically placed along roadways will detect congested or blocked lanes, prompting the system to redirect drivers to alternate routes. Furthermore, in case of emergencies, the system will facilitate immediate assistance by wirelessly transmitting the location of nearby emergency facilities to the LED billboard for prompt display, offering a vital lifeline during crises.
+
+This project aims to revolutionize traffic management by integrating technology-driven solutions to alleviate congestion, enhance safety, and provide critical information to drivers in real-time. Implementing this comprehensive traffic management system can significantly improve daily commuting experiences, optimizing time utilization and fostering the sustainable development of the region.
+\end{abstract}
+
+\begin{IEEEkeywords}
+IoT, Arduino, LED BILLBOARD, Sensor, Motor, Traffic Road
+\end{IEEEkeywords}
+
+
+\section{Introduction}
+[Problem statement] 
+
+Efficient traffic management is an indispensable component for any country or region's advancement and sustained growth. Inadequate transportation systems not only disrupt daily routines but also exact a toll on valuable working hours, potentially stalling a nation's progress. Rush hours present a significant challenge for traffic authorities, where managing the flow of vehicles becomes arduous and labour-intensive. The conventional approach of increasing human resources to tackle congestion during peak times often proves costly and ineffective. The lack of a robust traffic management system exacerbates the issue, leading to wasted time and hindering overall development. Addressing these challenges demands an innovative solution that optimizes traffic flow, minimizes disruptions, and ensures effective management without overwhelming expenses. 
+
+[Literature Review] 
+Extensive research in traffic management has highlighted the critical role it plays in societal development. Traditional methods often fail to efficiently handle peak traffic hours, necessitating advanced technological interventions. Various studies have emphasized the need for smarter traffic control systems that can adapt dynamically to changing conditions. The integration of LED billboards with communication modules, motion sensors, sound detectors, and GPS trackers has been proposed in recent literature to streamline traffic flow and respond swiftly to emergencies. However, there remains a gap in the implementation of a comprehensive system that amalgamates these technologies cohesively to address the multifaceted challenges encountered during rush hours.
+
+[Innovation and Creativity] Our project introduces a pioneering solution to traffic congestion during peak hours. The innovation lies in the integration of a versatile LED billboard system controlled manually, automatically, and through mobile apps. This system is equipped with advanced functionalities including motion sensors to detect lane blockages, sound detectors for emergency alerts, and GPS tracking for swift assistance. The interactive Android app interface facilitates seamless communication with the LED billboard, allowing real-time messaging for traffic guidance. Moreover, the emergency traffic management module responds swiftly during crises, providing vital information to drivers and pedestrians. This amalgamation of technologies presents a creative and comprehensive approach towards optimizing traffic flow, ensuring efficient transportation management, and minimizing disruptions, thus paving the way for smoother daily commutes and fostering regional development.
+
+
+\section{Project Overview}
+project features :
+
+\begin{itemize}
+    \item  Through android apps it will show any kind of message in the led billboard by communication module (Wi-Fi or Bluetooth).
+    \item  It will trace any kind of opposite lane that is blocked through a motion sensor and suggest the use to an alternative way.
+    \item Maintain proper transportation through billboard automatically or manually also through apps.
+    \item  At emergency times there will be a sound detector and a billboard will show an emergency pass and block the other lane.
+    \item there will be a GPS tracker for any emergency help it will transmit location in mobile through a communication module. 
+\end{itemize}
+
+\section{Component List}
+
+The following components comprise the essential elements powering the smart billboard project, ranging from Arduino as the core microcontroller to a suite of sensors, actuators, connectors, and electronic essentials.
+
+%\begin{enumerate}
+  %  \item IR sensor
+  %  \item LCD Display
+  %  \item GSM Module
+%\end{enumerate}
+
+\subsection{Arduino Uno R3}
+
+The Arduino Uno R3 is a widely used open-source microcontroller board based on the ATmega328P microcontroller. It is the successor to the earlier versions of Arduino boards and is designed for easy prototyping and interaction with the physical world.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.5\textwidth]{uno.jpg}
+  \caption{Arduino Uno R3}
+  \label{fig:arduino}
+\end{figure}
+
+
+
+The Arduino Uno R3 board features various input and output pins, allowing users to connect sensors, actuators, displays, and other components easily. It can be programmed using the Arduino IDE, simplifying the process for beginners and experienced users alike.
+
+
+
+
+\subsection{Motion sensor HC SR501}
+
+The motion sensor, employing infrared or similar technology, detects movement accurately within its environment, facilitating responsive actions. Integral for security, lighting automation, and interactive systems, it triggers responses upon detecting motion, enhancing the smart bioboard's versatility and functionality..
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.5\textwidth]{motion_sensor-removebg-preview.png} 
+  \caption{Motion sensor HC SR501}
+  \label{fig:example}
+\end{figure}
+
+
+
+\subsection{MG995 Servo Motor}
+
+The MG995 is a popular high-torque analog servo motor used in various robotics and mechatronics projects. It is known for its affordability, durability, and ability to provide precise angular control. The MG995 servo motor operates based on PWM signals and is widely compatible with various microcontrollers, such as Arduino boards, Raspberry Pi, and other embedded systems. Its high torque makes it suitable for applications requiring precise angular movements, such as robotic arm control, pan-tilt mechanisms, and remote-controlled vehicles.
+
+
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.4\textwidth]{big motor.jpg}
+  \caption{MG995 Servo Motor}
+  \label{fig:mg995}
+\end{figure}
+
+
+
+
+\subsection{SG90 Micro Small 9g Servo Motor}
+
+The SG90 is a lightweight and compact servo motor widely used in hobbyist projects, robotics, and small-scale applications. Its small size, affordability, and ease of use make it popular among beginners and enthusiasts.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.4\textwidth]{small motor.jpg}
+  \caption{SG90 Micro Small 9g Servo Motor}
+  \label{fig:sg90}
+\end{figure}
+
+
+The SG90 servo motor operates based on PWM signals and is compatible with various microcontrollers, such as Arduino, Raspberry Pi, and other embedded systems. Its compact size and lightweight nature make it suitable for applications like small robotic projects, RC planes, cars, and more.
+
+
+\subsection{5mm LED Bulb}
+
+The 5mm Light-Emitting Diode (LED) bulb is a commonly used electronic component in various applications. It emits light when an electric current passes through it in the forward direction. The 5mm denotes the diameter of the LED.
+
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.3\textwidth]{led.jpg}
+  \caption{5mm LED Bulb}
+  \label{fig:5mmLED}
+\end{figure}
+
+\subsection{LED billboard}
+
+LED billboard is a large display panel made up of light-emitting diodes (LEDs) used for showcasing dynamic visual content. These high-resolution screens offer vibrant colours, exceptional brightness, and versatility in displaying text, images, and videos. LED billboards are employed in outdoor advertising, digital signage, and public announcements due to their durability, energy efficiency, and ability to capture attention, making them an impactful medium for delivering information or advertisements to large audiences in various environments.
+
+\subsection{Resistor 10k}
+A 10k ohm resistor is a common resistor with a resistance value of 10,000 ohms. It's frequently used in circuits for current limiting, voltage division, and biasing.
+
+\subsection{Resistor 220 Ohm}
+A 220 ohm resistor is a low-value resistor commonly used in circuits for current limiting in LEDs, logic circuits, and as a pull-up or pull-down resistor.
+
+\subsection{IC 74HC595}
+The 74HC595 is an 8-bit serial-in/serial or parallel-out shift register with output latches. It's widely used to expand the number of digital outputs in microcontroller-based projects.
+
+\subsection{IC ULN2803}
+The ULN2803 is an eight-channel high-voltage, high-current Darlington transistor array. It's commonly used to drive inductive loads such as relays, motors, and lamps.
+
+\subsection{IC 7805}
+The 7805 is a voltage regulator IC that provides a stable 5V output. It's frequently used to regulate voltage in various electronic circuits.
+
+\subsection{Vero Board (Dotted) 6.5x14.5cm}
+A Vero board is a type of perforated circuit board used for prototyping electronic circuits. The dotted pattern helps in component placement and soldering.
+
+\subsection{16 Pin IC Base, 18 Pin IC Base, 28 Pin IC Base}
+IC bases are sockets used to securely mount integrated circuits onto a PCB or breadboard without soldering, allowing for easy replacement.
+
+
+\subsection{Male and Female Headers}
+
+Male and female headers are components used for making connections on PCBs or breadboards. Male headers have protruding pins, while female headers have receptacles to receive the pins.These headers come in various pin counts, allowing for versatile connections in electronics projects. They are commonly used in interfacing modules, microcontrollers, and sensors.
+
+
+\subsection{Capacitor 10uF-50V}
+A 10uF capacitor rated for 50V is an electrolytic capacitor used for filtering, decoupling, and energy storage in circuits.
+
+\subsection{5 Way Gang Board}
+A 5-way gang board is a terminal block used for connecting multiple wires or components in a single place.
+
+\subsection{DC Socket}
+A DC socket is used for external power input connections in electronic devices, allowing the connection of a DC power supply.
+
+\subsection{SPST Switch}
+An SPST (Single Pole, Single Throw) switch is a simple on/off switch that controls the flow of current in a circuit with a single pole and a single throw.
+
+\subsection{Breadboard}
+A breadboard is a prototyping board used for creating temporary electrical connections without soldering. It's commonly used for experimenting and testing electronic circuits.
+
+
+\section{Cost Calculation}
+
+
+\begin{tabular}{|c|c|c|}
+    \hline
+    \textbf{Component} & \textbf{Quantity} & \textbf{Price (TK)} \\
+    \hline
+    Arduino Uno R3 & 1 & 560 \\
+    LED 5mm small bulb & 400 & 320 \\
+    Resistor 10k & 5 & 7 \\
+    Resistor 220 Ohm & 42 & 378 \\
+    IC 74HC595 & 7 & 245 \\
+    IC ULN2803 & 1 & 55 \\
+    IC 7805 & 2 & 40 \\
+    Sound Sensor & 4 & 320 \\
+    Motion Sensor & 2 & 240 \\
+    Servo Motor MG995 & 1 & 380 \\
+    2-pin Push Button & 8 & 40 \\
+    Vero Board Doted 6.5x14.5cm & 1 & 28 \\
+    16-pin IC Base & 7 & 105 \\
+    18-pin IC Base & 1 & 12 \\
+    28-pin IC Base & 1 & 18 \\
+    Male Header & 2 & 70 \\
+    Female Header & 2 & 90 \\
+    Capacitor 100uF-25V & 1 & 5 \\
+    Capacitor 10uF-50V & 2 & 10 \\
+    5 Way Gang Board & 1 & 150 \\
+    DC Socket & 1 & 10 \\
+    SPST Switch & 1 & 6 \\
+    MB102 BreadBoard & 3 & 480 \\
+    \hline
+    \textbf{Total Cost} & & \textbf{3451 TK} \\ % Updated Total Cost
+    \hline
+\end{tabular}
+
+
+\section{Prototype of the Project}
+
+The Smart Traffic Commercial Billboard project aims to revolutionize traffic management through an innovative system incorporating cutting-edge technology. The prototype implementation includes the following features:
+
+\begin{itemize}
+    \item Implementation of an Android application facilitating communication with the LED billboard through Wi-Fi or Bluetooth connectivity. This application enables the display of various messages on the billboard, aiding in traffic regulation and management.
+    \item Utilization of motion sensors to detect blockages or congestion in opposing lanes, prompting automated suggestions for alternative routes, enhancing traffic flow optimization.
+    \item Integration of a system allowing manual or automatic control of the LED billboard via dedicated applications or direct manipulation, ensuring dynamic adaptability to changing traffic scenarios.
+    \item Incorporation of a sound detection mechanism during emergencies, triggering the LED billboard to display critical emergency messages and block affected lanes for efficient traffic redirection.
+    \item Implementation of a GPS tracker enabling transmission of emergency location data wirelessly to mobile devices through the communication module, facilitating prompt assistance and guidance to the nearest emergency facilities.
+\end{itemize}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.4\textwidth]{eee_diagram.png} % Replace with your flowchart image file
+  \caption{Diagram of the Project}
+  \label{fig:project_flowchart}
+\end{figure}
+
+This prototype showcases the foundational functionalities aimed at enhancing traffic management, addressing congestion, and providing crucial information to commuters, ultimately optimizing travel time and improving the overall traffic system efficiency.
+
+
+
+
+\begin{thebibliography}{00}
+
+
+ \item Robotics Bd shop (RoboticsBD). Available at: \texttt{https://store.roboticsbd.com}
+  \item Speedy Tech (SpeedyTech). Available at: \texttt{https://bdspeedytech.com}
+
+\end{thebibliography}
+
+\section{Implementation}
+
+
+\subsection*{1. Connect the LEDs:}
+\subsubsection*{Placement on Breadboard:}
+Arrange the LEDs in a matrix formation on the breadboard.
+
+\subsubsection*{Cathode Connection:}
+Connect the cathode (short leg) of each LED to a common ground through a resistor.
+
+\subsubsection*{Anode Connection:}
+Connect the anode (long leg) of each LED to the Arduino pins. Plan the wiring carefully to form rows and columns.
+
+\subsection*{2. Wiring the Matrix:}
+\subsubsection*{Row Connection:}
+Connect one set of LED legs (e.g., cathodes) to Arduino digital pins for rows.
+
+\subsubsection*{Column Connection:}
+Connect the other set of LED legs (e.g., anodes) to Arduino digital pins for columns.
+
+\subsection*{3. Arduino Sketch:}
+\subsubsection*{Write the Code:}
+Create an Arduino sketch to control the LEDs.
+Use nested loops to iterate through the rows and columns, controlling LED states to display patterns or text.
+
+\subsection*{4. Uploading and Testing:}
+\subsubsection*{Upload the Code:}
+Upload the written code to your Arduino board using the Arduino IDE or a compatible software.
+
+\subsubsection*{Test Display:}
+Test your matrix display by implementing various patterns or displaying scrolling text using the uploaded code.
+
+
+
+
+
+
+
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.3\textwidth]{led_control.jpg} % Replace with your image file
+  \caption{LED Billboard Control Circuit}
+  \label{fig:led_control_circuit}
+\end{figure}
+
+
+
+
+
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.3\textwidth]{led_connection.png} % Replace with your LED connection image file
+  \caption{LED Connection}
+  \label{fig:led_connection}
+\end{figure}
+
+
+\section{Appendix}
+
+\subsection{MG995 Servo Motor Code}
+
+
+
+\begin{lstlisting}
+ if (Serial.available() > 0) { // Check if data 
+    char command = Serial.read(); //incoming command
+
+    // Perform actions based on the received command
+    if (command == '1') {
+      moveServo(0); // Move servo to direction 1
+    } else if (command == '2') {
+      moveServo(90); // Move servo to direction 2
+    } else if (command == '3') {
+      moveServo(180); // Move servo to direction 3
+    } else if (command == '4') {
+      moveServo(270); // Move servo to direction 4
+    }
+}
+\end{lstlisting}
+
+\subsection{HC-SR501 Motion Sensor Code}
+
+
+\begin{lstlisting}
+
+void setup() {
+  pinMode(sensorPin, INPUT);// Set sensor pin 
+  pinMode(ledPin, OUTPUT); // Set LED pin as output
+  Serial.begin(9600);   // serial communication
+}
+
+void loop() {
+  int motionState = digitalRead(sensorPin); 
+
+  if (motionState == HIGH) {
+    digitalWrite(ledPin, HIGH); 
+    Serial.println("MotionDetected!");
+    delay(1000);
+  } else {
+    digitalWrite(ledPin, LOW);
+}
+\end{lstlisting}
+
+
+\subsection{SG90 Micro Servo Motor Control}
+
+
+\begin{lstlisting}
+
+void loop() {
+  servoMotor.write(0); // Rotate  to 0 degrees
+  delay(1000);         // Wait for 1 second
+  servoMotor.write(90); // Rotate to 90 degrees
+  delay(1000);         // Wait for 1 second
+  servoMotor.write(180); // Rotate to 180 degrees
+  delay(1000);         // Wait for 1 second
+}
+\end{lstlisting}
+
+
+\subsection{Led Bill Board Controll Code}
+
+\begin{lstlisting}
+int charIndex;
+int scrollspeed = 10;
+int i;
+int x;
+int y;
+char r_char;
+
+char msg[] = "AllMessageHere";
+
+int clockPin1 = 10;
+int latchPin1 = 9;
+int dataPin1 = 8;
+
+int clockPin2 = 7;
+int latchPin2 = 6;
+int dataPin2 = 5;
+
+byte bitmap[8][7];
+
+int numZones = sizeof(bitmap) / 8;
+int maxZoneIndex = numZones - 1;
+int numCols = numZones * 8;
+
+char alphabets[95][8] = {
+    {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00},
+    {0x00, 0x00, 0x00, 0x4f, 0x4f, 0x00, 0x00, 0x00},
+    // ... (rest of the alphabet data)
+};
+
+char alphabets2[95][8] = {
+    // Font-2 data
+    // ...
+};
+
+void clearBitmap()
+{
+  for (int row = 0; row < 8; row++) {
+    for (int zone = 0;zone<= maxZoneIndex;zone++){
+      bitmap[row][zone] = 0;
+    }
+  }
+}
+
+void setup() {
+  pinMode(latchPin1, OUTPUT);
+  pinMode(clockPin1, OUTPUT);
+  pinMode(dataPin1, OUTPUT);
+
+  pinMode(latchPin2, OUTPUT);
+  pinMode(clockPin2, OUTPUT);
+  pinMode(dataPin2, OUTPUT);
+  Serial.begin(9600);
+
+  clearBitmap();
+}
+
+void RefreshDisplay()
+{
+  for (int row = 0; row < 8; row++) {
+    int rowbit = 1 << row;
+    digitalWrite(latchPin2, LOW);
+    shiftOut(dataPin2, clockPin2, LSBFIRST, rowbit);
+
+    digitalWrite(latchPin1, LOW);
+
+    for (int zone = maxZoneIndex; zone >= 0; zone--)
+    {
+      shiftOut(dataPin1, clockPin1,
+      MSBFIRST, bitmap[row][zone]);
+    }
+
+    digitalWrite(latchPin1, HIGH);
+    digitalWrite(latchPin2, HIGH);
+    delayMicroseconds(300);
+  }
+}
+
+void Plot(int col, int row, bool isOn)
+{
+  int zone = col / 8;
+  int colBitIndex = x % 8;
+  byte colBit = 1 << colBitIndex;
+  if (isOn)
+    bitmap[row][zone] =  bitmap[y][zone] | colBit;
+  else
+    bitmap[row][zone] =  bitmap[y][zone] & (~colBit);
+}
+
+void XProcess()
+{
+  for (charIndex = 0; charIndex < (sizeof(msg) - 1);
+  charIndex++)
+  {
+    int alphabetIndex = msg[charIndex] - '';
+    if (alphabetIndex < 0) alphabetIndex = 0;
+
+    for (int col = 0; col < 8; col++)
+    {
+      for (int row = 0; row < 8; row++)
+      {
+        bool isOn = 0;
+        if (col <    isOn = 
+        bitRead(alphabets[alphabetIndex][col],
+        7-row)==1;
+        Plot( numCols - 1, row, isOn);
+      }
+      for (int refreshCount = 0; 
+      refreshCount < scrollspeed; refreshCount++)
+        RefreshDisplay();
+
+      for (int row = 0; row < 8; row++)
+      {
+        for (int zone = 0; zone < numZones; zone++)
+        {
+          bitmap[row][zone] = bitmap[row][zone] >> 1;
+          if (zone < maxZoneIndex)
+          bitWrite(bitmap[row][zone], 
+          7, bitRead(bitmap[row][zone + 1], 0));
+        }
+      }
+    }
+  }
+}
+
+void serialInput() {
+  if (Serial.available()) {
+    for (i = 0; i < 105; i++) {
+      msg[i] = '\0';
+    }
+    charIndex = 0;
+  }
+  while (Serial.available()) {
+    if (charIndex < (max_char - 1))
+    {
+      r_char = Serial.read();
+      msg[charIndex] = r_char;
+      charIndex++;
+      msg[charIndex] = '\0';
+    }
+  }
+}
+
+void loop() {
+  XProcess();
+  serialInput();
+}
+
+\end{lstlisting}
+
+
+\subsection{Bluetooth module Code}
+\begin{lstlisting}
+   SoftwareSerial BTSerial(2, 3); // RX | TX
+
+void setup() {
+  Serial.begin(9600);
+  BTSerial.begin(9600);
+}
+
+void loop() {
+  if (BTSerial.available()) {
+    Serial.write(BTSerial.read());
+  }
+  if (Serial.available()) {
+    BTSerial.write(Serial.read());
+  }
+} 
+\end{lstlisting}
+    
+\end{document}
+
+
+
+
